@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Beatmap Searcher",
+    "description": "This extension will search from Youtube url osu beatmaps.",
+    "version": "1.0",
+  
+    "browser_action": {
+     "default_icon": "icon.png",
+     "default_popup": "popup.html"
+    },
+    "permissions": [
+     "activeTab"
+     ]
+  }
