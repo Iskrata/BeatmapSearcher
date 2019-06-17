@@ -1,5 +1,6 @@
 import urllib.request
 import urllib.parse
+import webbrowser
 import re
 
 url = input()
@@ -21,4 +22,4 @@ def search_osu(title):
     return 'https://osu.ppy.sh/beatmapsets?q=' + search_url
 
 
-print(search_osu(get_title_by_url(url)))
+webbrowser.open_new(search_osu(get_title_by_url(url)))
