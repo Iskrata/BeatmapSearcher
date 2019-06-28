@@ -4,3 +4,12 @@ chrome.tabs.getSelected(null, function(tab) { //<-- "tab" has all the informatio
 });
 
 
+to save
+
+chrome.storage.sync.set({ mytext: txtValue });
+to get
+
+chrome.storage.sync.get('mytext', function(data) {
+    yourTextArea.value = data.mytext;
+});
+
