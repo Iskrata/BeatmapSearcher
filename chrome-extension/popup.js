@@ -2,6 +2,9 @@ chrome.tabs.getSelected(null, function(tab) {
 console.log(tab.url);       // url
 console.log(tab.title);     // title
 
+console.log(req)
+
+
 if (tab.url.includes('https://www.youtube.com')){
 
     var song_title = tab.title;
@@ -11,4 +14,16 @@ if (tab.url.includes('https://www.youtube.com')){
     
     chrome.tabs.create({ url: newURL });
     }
+
+    // chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
+    //     console.log("something happening from the extension");
+    //     var data = request.data || {};
+    //     var linksList = document.querySelectorAll('a');
+    //     [].forEach.call(linksList, function(header) {
+    //         header.innerHTML = request.data;
+    //     });
+    //     alert(data)
+    //     sendResponse({data: data, success: true});
+    // });
 });
+
