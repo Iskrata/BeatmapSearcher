@@ -23,3 +23,4 @@ def search_osu(title):
 
 
 webbrowser.open_new(search_osu(get_title_by_url(url)))
+
