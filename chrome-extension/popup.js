@@ -2,10 +2,11 @@ chrome.tabs.getSelected(null, function (tab) {
     console.log(tab.url);       // url
     console.log(tab.title);     // title
 
-    console.log()
+    console.log(tab.href)
 
 
-    if (tab.url.includes('https://www.youtube.com')) {
+
+    if (tab.url.includes('https://www.youtube.com') && tab.title != 'YouTube') {
 
         var song_title = tab.title;
         song_title = song_title.replace(' - YouTube', '');
