@@ -4,7 +4,9 @@ chrome.tabs.getSelected(null, function (tab) {
 
     //console.log(tab.href)
 
-
+    function reqListener () {
+        console.log(this.responseText);
+      }
 
     if (tab.url.includes('https://www.youtube.com') && tab.title != 'YouTube') {
 
@@ -12,6 +14,11 @@ chrome.tabs.getSelected(null, function (tab) {
         song_title = song_title.replace(' - YouTube', '');
 
         var newURL = 'https://osu.ppy.sh/beatmapsets?q=' + encodeURI(song_title)
+
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("GET", newURL);
+        oReq.send();
 
         chrome.tabs.create({ url: newURL });
     }
