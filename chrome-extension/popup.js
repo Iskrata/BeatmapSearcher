@@ -2,7 +2,7 @@ chrome.tabs.getSelected(null, function (tab) {
     console.log(tab.url);       // url
     console.log(tab.title);     // title
 
-    console.log(tab.href)
+    //console.log(tab.href)
 
 
 
