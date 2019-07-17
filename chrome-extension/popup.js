@@ -2,7 +2,7 @@ chrome.tabs.getSelected(null, function (tab) {
     console.log(tab.url);       // url
     console.log(tab.title);     // title
 
-    function searchBeatmaps () {
+    function searchBeatmaps() {
 
         const regex = /<script id="json-beatmaps" type="application\/json">(.*?)<\/script>/gs;
 
@@ -11,10 +11,11 @@ chrome.tabs.getSelected(null, function (tab) {
             var obj = JSON.parse(m[1]);
             for (var i = 0; i < obj.beatmapsets.length; i++) {
                 console.log(obj.beatmapsets[i].title);
-                writeOn += obj.beatmapsets[i].title + "<br>";
+                var downUrl = 'https://osu.ppy.sh/beatmapsets/' + obj.beatmapsets[i].id
+                writeOn += '<a href="' + downUrl + '" target="_blank">' + obj.beatmapsets[i].title + '</a><hr><br>';
             }
             document.getElementById("main").innerHTML = writeOn
-        } 
+        }
     }
 
     if (tab.url.includes('https://www.youtube.com') && tab.title != 'YouTube') {
@@ -28,7 +29,7 @@ chrome.tabs.getSelected(null, function (tab) {
         oReq.addEventListener("load", searchBeatmaps);
         oReq.open("GET", newURL);
         oReq.send();
-        
+
 
         //chrome.tabs.create({ url: newURL });
     }
