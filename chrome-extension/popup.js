@@ -2,10 +2,11 @@ chrome.tabs.getSelected(null, function (tab) {
     console.log(tab.url);       // url
     console.log(tab.title);     // title
 
-    //console.log(tab.href)
-
     function reqListener () {
-        console.log(this.responseText);
+        var titles = this.responseText.match(/"title":"([^"]*)"/g);
+        //console.log(titles[0]);
+        console.log(titles[0])
+        //console.log(this.responseText)
       }
 
     if (tab.url.includes('https://www.youtube.com') && tab.title != 'YouTube') {
@@ -19,8 +20,9 @@ chrome.tabs.getSelected(null, function (tab) {
         oReq.addEventListener("load", reqListener);
         oReq.open("GET", newURL);
         oReq.send();
+        
 
-        chrome.tabs.create({ url: newURL });
+        //chrome.tabs.create({ url: newURL });
     }
 
     // chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
