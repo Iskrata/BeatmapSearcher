@@ -1,5 +1,5 @@
 body {
-    min-width: 150px;
+    min-width: 200px;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
 }
@@ -39,14 +39,14 @@ hr {
 
 a:link,
 a:visited {
-    color: rgb(224, 75, 167);
+    color: rgb(219, 139, 189);
     text-decoration: none;
     display: inline-block;
 }
 
 a:hover,
 a:active {
-    color: rgb(217, 159, 235);
+    color: rgb(117, 59, 134);
 }
 
 /* width */
@@ -58,4 +58,19 @@ a:active {
 ::-webkit-scrollbar-thumb {
     background: rgb(207, 166, 219);
     border-radius: 10px;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.beatmapset-header {
+    height: 70px;
 }
